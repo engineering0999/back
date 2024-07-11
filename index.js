@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
-app.get('/api/scrape', async (req, res) => {
+app.get('/api/get', async (req, res) => {
     const { htno } = req.query;
     if (!htno) {
         return res.status(400).send({ error: 'htno parameter is required' });
