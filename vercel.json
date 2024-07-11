@@ -1,0 +1,5 @@
+{ 
+    "version": 2, 
+    "builds": [{"source": "./index.js", "use": "@versel/node"}],
+    "rewrites": [{ "source": "/(.*)", "destination": "/" }] 
+}
