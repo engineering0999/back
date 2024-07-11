@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Replace this with the actual URL of your allowed origin
-const allowedOrigin = 'https://itsengineering.vercel.app/';
+const allowedOrigin = 'https://itsengineering.vercel.app/results';
 
 app.use(cors({
     origin: (origin, callback) => {
