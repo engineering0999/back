@@ -5,7 +5,18 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// Replace this with the actual URL of your allowed origin
+const allowedOrigin = 'https://itsengineering.vercel.app/';
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || origin === allowedOrigin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+}));
 
 app.get('/api/get', async (req, res) => {
     const { htno } = req.query;
@@ -21,5 +32,5 @@ app.get('/api/get', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+   
 });
